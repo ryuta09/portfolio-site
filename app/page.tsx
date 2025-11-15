@@ -4,7 +4,26 @@ import { BsTwitterX } from 'react-icons/bs'
 import { FaGithub } from 'react-icons/fa'
 import { FaArrowRight } from 'react-icons/fa6'
 import { Button } from '@/components/ui/button'
+
 export default function Home() {
+	const _skills = [
+		{ name: 'HTML5', iconPath: '/icon/html5.svg' },
+		{ name: 'CSS3', iconPath: '/icon/css3.svg' },
+		{ name: 'Sass', iconPath: '/icon/sass.svg' },
+		{ name: 'Tailwind CSS', iconPath: '/icon/tailwindcss.svg' },
+		{ name: 'JavaScript', iconPath: '/icon/js.svg' },
+		{ name: 'TypeScript', iconPath: '/icon/typescript.svg' },
+		{ name: 'React', iconPath: '/icon/react.svg' },
+		{ name: 'Next.js', iconPath: '/icon/nextjs.svg' },
+		{ name: 'Astro', iconPath: '/icon/astro.svg' },
+	]
+
+	const _skillTools = [
+		{ name: 'Git', iconPath: '/icon/git.svg' },
+		{ name: 'GithubActions', iconPath: '/icon/githubactions.svg' },
+	]
+
+	const _skillBackendOrm = [{ name: 'Prisma', iconPath: '/icon/prisma.svg' }]
 	return (
 		<main>
 			<section className='mx-auto max-w-[800px] px-4'>
@@ -54,8 +73,8 @@ export default function Home() {
 					/>
 					<div>
 						<div>
-							<h2 className='font-bold text-3xl'>わたしについて</h2>
-							<span className='text-sm'>About me</span>
+							<h2 className='font-bold text-3xl'>About me</h2>
+							<span className='text-xs'>わたしについて</span>
 						</div>
 						<div>
 							<p className='mt-3 text-sm leading-6'>
@@ -88,6 +107,73 @@ export default function Home() {
 							</div>
 						</div>
 					</div>
+				</div>
+			</section>
+
+			<section>
+				<div className='mx-auto max-w-5xl px-4 py-10 md:py-20'>
+					<h2 className='font-bold text-3xl'>Skills</h2>
+					<span className='text-xs'>スキル</span>
+					<section className='mt-8'>
+						<h3 className='font-bold text-2xl'>FrontEnd</h3>
+						<div className='mt-4 grid grid-cols-2 gap-4 md:grid-cols-5'>
+							{_skills.map((_skill) => (
+								<div
+									className='group rounded-md border border-gray-200 p-4 duration-200 hover:border-gray-500'
+									key={_skill.name}
+								>
+									<Image
+										src={_skill.iconPath}
+										width={30}
+										height={30}
+										alt={_skill.name}
+										className='duration-200 group-hover:scale-110'
+									/>
+									<p className='mt-3 text-sm'>{_skill.name}</p>
+								</div>
+							))}
+						</div>
+					</section>
+					<section className='mt-8'>
+						<h3 className='font-bold text-2xl'>Backend / ORM</h3>
+						<div className='mt-4 grid grid-cols-2 gap-4 md:grid-cols-5'>
+							{_skillBackendOrm.map((_skill) => (
+								<div
+									className='group rounded-md border border-gray-200 p-4 duration-200 hover:border-gray-500'
+									key={_skill.name}
+								>
+									<Image
+										src={_skill.iconPath}
+										width={30}
+										height={30}
+										alt={_skill.name}
+										className='duration-200 group-hover:scale-110'
+									/>
+									<p className='mt-3 text-sm'>{_skill.name}</p>
+								</div>
+							))}
+						</div>
+					</section>
+					<section className='mt-8'>
+						<h3 className='font-bold text-2xl'>Tools</h3>
+						<div className='mt-4 grid grid-cols-2 gap-4 md:grid-cols-5'>
+							{_skillTools.map((_skill) => (
+								<div
+									className='group rounded-md border border-gray-200 p-4 duration-200 hover:border-gray-500'
+									key={_skill.name}
+								>
+									<Image
+										src={_skill.iconPath}
+										width={30}
+										height={30}
+										alt={_skill.name}
+										className='duration-200 group-hover:scale-110'
+									/>
+									<p className='mt-3 text-sm'>{_skill.name}</p>
+								</div>
+							))}
+						</div>
+					</section>
 				</div>
 			</section>
 		</main>
