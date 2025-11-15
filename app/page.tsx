@@ -4,10 +4,9 @@ import { BsTwitterX } from 'react-icons/bs'
 import { FaGithub } from 'react-icons/fa'
 import { FaArrowRight } from 'react-icons/fa6'
 import { Button } from '@/components/ui/button'
-import Footer from '@/components/common/Footer/Footer'
 
-export default function Home() {
-	const _skills = [
+export default async function Home() {
+	const skills = [
 		{ name: 'HTML5', iconPath: '/icon/html5.svg' },
 		{ name: 'CSS3', iconPath: '/icon/css3.svg' },
 		{ name: 'Sass', iconPath: '/icon/sass.svg' },
@@ -19,12 +18,13 @@ export default function Home() {
 		{ name: 'Astro', iconPath: '/icon/astro.svg' },
 	]
 
-	const _skillTools = [
+	const skillTools = [
 		{ name: 'Git', iconPath: '/icon/git.svg' },
 		{ name: 'GithubActions', iconPath: '/icon/githubactions.svg' },
 	]
 
-	const _skillBackendOrm = [{ name: 'Prisma', iconPath: '/icon/prisma.svg' }]
+	const skillBackendOrm = [{ name: 'Prisma', iconPath: '/icon/prisma.svg' }]
+
 	return (
 		<main>
 			<section className='mx-auto max-w-[800px] px-4'>
@@ -118,7 +118,7 @@ export default function Home() {
 					<section className='mt-8'>
 						<h3 className='font-bold text-2xl'>FrontEnd</h3>
 						<div className='mt-4 grid grid-cols-2 gap-4 md:grid-cols-5'>
-							{_skills.map((_skill) => (
+							{skills.map((_skill) => (
 								<div
 									className='group rounded-md border border-gray-200 p-4 duration-200 hover:border-gray-500'
 									key={_skill.name}
@@ -138,7 +138,7 @@ export default function Home() {
 					<section className='mt-8'>
 						<h3 className='font-bold text-2xl'>Backend / ORM</h3>
 						<div className='mt-4 grid grid-cols-2 gap-4 md:grid-cols-5'>
-							{_skillBackendOrm.map((_skill) => (
+							{skillBackendOrm.map((_skill) => (
 								<div
 									className='group rounded-md border border-gray-200 p-4 duration-200 hover:border-gray-500'
 									key={_skill.name}
@@ -158,7 +158,7 @@ export default function Home() {
 					<section className='mt-8'>
 						<h3 className='font-bold text-2xl'>Tools</h3>
 						<div className='mt-4 grid grid-cols-2 gap-4 md:grid-cols-5'>
-							{_skillTools.map((_skill) => (
+							{skillTools.map((_skill) => (
 								<div
 									className='group rounded-md border border-gray-200 p-4 duration-200 hover:border-gray-500'
 									key={_skill.name}
@@ -177,7 +177,6 @@ export default function Home() {
 					</section>
 				</div>
 			</section>
-      <Footer />
 		</main>
 	)
 }
