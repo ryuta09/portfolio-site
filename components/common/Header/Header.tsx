@@ -17,12 +17,17 @@ export default function Header() {
 				<ul className='flex flex-col items-center gap-4 md:flex-row md:gap-6'>
 					<li className=''>
 						<Link href='/profile' className='font-semibold'>
-							プロフィール
+							Profile
 						</Link>
 					</li>
 					<li>
 						<Link href='/works' className='font-semibold'>
-							制作物
+							Works
+						</Link>
+					</li>
+					<li>
+						<Link href='/blog' className='font-semibold'>
+							Blog
 						</Link>
 					</li>
 				</ul>

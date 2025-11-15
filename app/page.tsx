@@ -4,6 +4,7 @@ import { BsTwitterX } from 'react-icons/bs'
 import { FaGithub } from 'react-icons/fa'
 import { FaArrowRight } from 'react-icons/fa6'
 import { Button } from '@/components/ui/button'
+import Footer from '@/components/common/Footer/Footer'
 
 export default function Home() {
 	const _skills = [
@@ -176,6 +177,7 @@ export default function Home() {
 					</section>
 				</div>
 			</section>
+      <Footer />
 		</main>
 	)
 }
