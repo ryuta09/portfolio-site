@@ -36,7 +36,8 @@ export default function ProfilePage() {
 					</p>
 				</article>
 			</article>
-			<article className='mt-4 flex flex-col gap-4'>
+			<div className='my-4 border'></div>
+			<article className='flex flex-col gap-4'>
 				<h3 className='font-bold text-2xl'>強み・担当分野</h3>
 				<article>
 					<h4 className='font-bold text-lg'>フロントエンド開発</h4>
@@ -93,6 +94,7 @@ export default function ProfilePage() {
 					</ul>
 				</article>
 			</article>
+			<div className='my-4 border'></div>
 			<article>
 				<h3 className='mt-6 font-bold text-2xl'>課題に寄り添えるエンジニア</h3>
 				<p className='mt-2 text-sm'>
