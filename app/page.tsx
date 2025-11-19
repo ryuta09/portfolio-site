@@ -39,9 +39,8 @@ export default async function Home() {
 					<div className='mt-4 flex items-center gap-4 md:mt-6'>
 						<Button
 							asChild
-							variant='outline'
 							size='lg'
-							className='group cursor-pointer text-sm hover:bg-black/5'
+							className='group cursor-pointer border text-sm duration-200 hover:border-[#7383BF] hover:bg-[#7383BF] hover:text-white'
 						>
 							<Link href='/' className='flex items-center gap-3'>
 								制作物一覧
@@ -52,7 +51,7 @@ export default async function Home() {
 							size='lg'
 							asChild
 							variant='outline'
-							className='group cursor-pointer text-sm hover:bg-black/5'
+							className='group cursor-pointer text-sm duration-200 hover:border-[#7383BF] hover:bg-[#7383BF] hover:text-white'
 						>
 							<Link href='/' className='flex items-center gap-3'>
 								ブログ一覧
@@ -86,7 +85,7 @@ export default async function Home() {
 									size='lg'
 									asChild
 									variant='outline'
-									className='group cursor-pointer text-sm hover:bg-black/5'
+									className='group cursor-pointer text-sm duration-200 hover:border-[#7383BF] hover:bg-[#7383BF] hover:text-white'
 								>
 									<Link href='/profile' className='flex items-center gap-3'>
 										もっと見る
@@ -118,19 +117,19 @@ export default async function Home() {
 					<section className='mt-8'>
 						<h3 className='font-bold text-2xl'>FrontEnd</h3>
 						<div className='mt-4 grid grid-cols-2 gap-4 md:grid-cols-5'>
-							{skills.map((_skill) => (
+							{skills.map((skill) => (
 								<div
-									className='group rounded-md border border-gray-200 p-4 duration-200 hover:border-gray-500'
-									key={_skill.name}
+									className='group rounded-md border border-gray-200 p-4 duration-200 hover:border-[#7383BF]'
+									key={skill.name}
 								>
 									<Image
-										src={_skill.iconPath}
+										src={skill.iconPath}
 										width={30}
 										height={30}
-										alt={_skill.name}
+										alt={skill.name}
 										className='duration-200 group-hover:scale-110'
 									/>
-									<p className='mt-3 text-sm'>{_skill.name}</p>
+									<p className='mt-3 text-sm'>{skill.name}</p>
 								</div>
 							))}
 						</div>
@@ -140,7 +139,7 @@ export default async function Home() {
 						<div className='mt-4 grid grid-cols-2 gap-4 md:grid-cols-5'>
 							{skillBackendOrm.map((_skill) => (
 								<div
-									className='group rounded-md border border-gray-200 p-4 duration-200 hover:border-gray-500'
+									className='group rounded-md border border-gray-200 p-4 duration-200 hover:border-[#7383BF]'
 									key={_skill.name}
 								>
 									<Image
@@ -160,7 +159,7 @@ export default async function Home() {
 						<div className='mt-4 grid grid-cols-2 gap-4 md:grid-cols-5'>
 							{skillTools.map((_skill) => (
 								<div
-									className='group rounded-md border border-gray-200 p-4 duration-200 hover:border-gray-500'
+									className='group rounded-md border border-gray-200 p-4 duration-200 hover:border-[#7383BF]'
 									key={_skill.name}
 								>
 									<Image

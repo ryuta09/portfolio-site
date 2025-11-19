@@ -29,13 +29,28 @@ export default function Footer() {
 			<nav className='py-4 md:py-6'>
 				<ul className='flex items-center justify-center gap-4 text-sm'>
 					<li>
-						<Link href='/profile'>Profile</Link>
+						<Link
+							href='/profile'
+							className='font-bold duration-200 hover:text-[#7383BF]'
+						>
+							Profile
+						</Link>
 					</li>
 					<li>
-						<Link href='/works'>Works</Link>
+						<Link
+							href='/works'
+							className='font-bold duration-200 hover:text-[#7383BF]'
+						>
+							Works
+						</Link>
 					</li>
 					<li>
-						<Link href='/blog'>Blog</Link>
+						<Link
+							href='/blog'
+							className='font-bold duration-200 hover:text-[#7383BF]'
+						>
+							Blog
+						</Link>
 					</li>
 				</ul>
 			</nav>

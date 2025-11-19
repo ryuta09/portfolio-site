@@ -16,17 +16,26 @@ export default function Header() {
 			>
 				<ul className='flex flex-col items-center gap-4 md:flex-row md:gap-6'>
 					<li className=''>
-						<Link href='/profile' className='font-semibold'>
+						<Link
+							href='/profile'
+							className='font-semibold duration-200 hover:text-[#7383BF]'
+						>
 							Profile
 						</Link>
 					</li>
 					<li>
-						<Link href='/works' className='font-semibold'>
+						<Link
+							href='/works'
+							className='font-semibold duration-200 hover:text-[#7383BF]'
+						>
 							Works
 						</Link>
 					</li>
 					<li>
-						<Link href='/blog' className='font-semibold'>
+						<Link
+							href='/blog'
+							className='font-semibold duration-200 hover:text-[#7383BF]'
+						>
 							Blog
 						</Link>
 					</li>
