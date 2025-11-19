@@ -2,43 +2,35 @@
 import Link from 'next/link'
 import { useState } from 'react'
 
+const menuItems = [
+	{ name: 'Profile', href: '/profile' },
+	{ name: 'Works', href: '/works' },
+	{ name: 'Blog', href: '/blog' },
+]
+
 export default function Header() {
 	const [isOpen, setIsOpen] = useState<boolean>(false)
 	return (
 		<header className='mx-auto flex max-w-[1200px] items-center justify-between p-4'>
 			<div>
 				<Link href='/' className='font-bold text-2xl'>
-					ryuta.dev
+					Ryuta Koga
 				</Link>
 			</div>
 			<nav
 				className={`-translate-x-full fixed top-0 left-0 z-50 flex h-full w-[200px] rounded-md bg-white px-6 py-8 shadow duration-200 md:static md:flex md:h-auto md:w-auto md:translate-x-0 md:flex-row md:bg-transparent md:px-0 md:py-0 md:shadow-none ${isOpen ? 'translate-x-0' : ''}`}
 			>
 				<ul className='flex flex-col items-center gap-4 md:flex-row md:gap-6'>
-					<li className=''>
-						<Link
-							href='/profile'
-							className='font-semibold duration-200 hover:text-[#7383BF]'
-						>
-							Profile
-						</Link>
-					</li>
-					<li>
-						<Link
-							href='/works'
-							className='font-semibold duration-200 hover:text-[#7383BF]'
-						>
-							Works
-						</Link>
-					</li>
-					<li>
-						<Link
-							href='/blog'
-							className='font-semibold duration-200 hover:text-[#7383BF]'
-						>
-							Blog
-						</Link>
-					</li>
+					{menuItems.map((item) => (
+						<li key={item.name}>
+							<Link
+								href={item.href}
+								className='font-semibold duration-200 hover:text-[#7383BF]'
+							>
+								{item.name}
+							</Link>
+						</li>
+					))}
 				</ul>
 			</nav>
 

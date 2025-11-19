@@ -1,6 +1,13 @@
 import Link from 'next/link'
 import { BsTwitterX } from 'react-icons/bs'
 import { FaGithub } from 'react-icons/fa'
+
+const menuItems = [
+	{ name: 'Profile', href: '/profile' },
+	{ name: 'Works', href: '/works' },
+	{ name: 'Blog', href: '/blog' },
+]
+
 export default function Footer() {
 	return (
 		<footer className='w-full'>
@@ -28,30 +35,16 @@ export default function Footer() {
 			</div>
 			<nav className='py-4 md:py-6'>
 				<ul className='flex items-center justify-center gap-4 text-sm'>
-					<li>
-						<Link
-							href='/profile'
-							className='font-bold duration-200 hover:text-[#7383BF]'
-						>
-							Profile
-						</Link>
-					</li>
-					<li>
-						<Link
-							href='/works'
-							className='font-bold duration-200 hover:text-[#7383BF]'
-						>
-							Works
-						</Link>
-					</li>
-					<li>
-						<Link
-							href='/blog'
-							className='font-bold duration-200 hover:text-[#7383BF]'
-						>
-							Blog
-						</Link>
-					</li>
+					{menuItems.map((item) => (
+						<li key={item.name}>
+							<Link
+								href={item.href}
+								className='font-bold duration-200 hover:text-[#7383BF]'
+							>
+								{item.name}
+							</Link>
+						</li>
+					))}
 				</ul>
 			</nav>
 			<div className='border-gray-200 border-t py-4 text-center'>
