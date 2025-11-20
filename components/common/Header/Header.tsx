@@ -1,12 +1,12 @@
 'use client'
 import Link from 'next/link'
+
 import { useState } from 'react'
 
 const menuItems = [
-	{ name: 'Profile', href: '#profile' },
-	{ name: 'Skills', href: '#skills' },
-	{ name: 'Works', href: '#works' },
-	{ name: 'Blog', href: '#blog' },
+	{ name: 'Profile', href: '/profile' },
+	{ name: 'Works', href: '/works' },
+	{ name: 'Blog', href: '/blog' },
 ]
 
 export default function Header() {

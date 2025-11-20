@@ -1,15 +1,6 @@
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-
 export default function ProfilePage() {
 	return (
-		<div className='mx-auto max-w-[800px] px-4 py-8'>
-			<Button
-				asChild
-				className='cursor-pointer border text-sm duration-200 hover:border-[#7383BF] hover:bg-[#7383BF] hover:text-white'
-			>
-				<Link href='/'>トップページに戻る</Link>
-			</Button>
+		<div className='mx-auto max-w-[800px] px-4 py-20'>
 			<article className='mt-4 md:mt-6'>
 				<h2 className='font-bold text-3xl'>自己紹介</h2>
 				<p className='mt-2 text-sm'>
