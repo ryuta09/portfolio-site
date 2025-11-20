@@ -14,7 +14,7 @@ export default function Footer() {
 			<div className='border-gray-200 border-t border-b py-10 md:py-20'>
 				<div className='px-4 text-center'>
 					<div className='text-3xl md:text-5xl'>Let's Work Together</div>
-					<p className='mt-6 text-center text-sm md:text-base'>
+					<p className='mt-6 text-center text-sm'>
 						お仕事のご相談やお困りごとがあれば、お気軽にご連絡ください。
 					</p>
 				</div>

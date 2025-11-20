@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import Footer from '@/components/common/Footer/Footer'
-import Header from '@/components/common/Header/Header'
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',
@@ -15,7 +14,10 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-	title: 'ポートフォリオ',
+	title: {
+		default: 'ポートフォリオサイト',
+		template: '%s | ポートフォリオサイト',
+	},
 	description: '古賀龍太のポートフォリオサイトです。',
 }
 
@@ -25,11 +27,10 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang='ja'>
+		<html lang='ja' className='scroll-smooth'>
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} bg-[#F2F3F5] antialiased`}
 			>
-				<Header />
 				{children}
 				<Footer />
 			</body>

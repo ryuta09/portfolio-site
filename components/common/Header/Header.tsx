@@ -3,15 +3,16 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 const menuItems = [
-	{ name: 'Profile', href: '/profile' },
-	{ name: 'Works', href: '/works' },
-	{ name: 'Blog', href: '/blog' },
+	{ name: 'Profile', href: '#profile' },
+	{ name: 'Skills', href: '#skills' },
+	{ name: 'Works', href: '#works' },
+	{ name: 'Blog', href: '#blog' },
 ]
 
 export default function Header() {
 	const [isOpen, setIsOpen] = useState<boolean>(false)
 	return (
-		<header className='mx-auto flex max-w-[1200px] items-center justify-between p-4'>
+		<header className='fixed top-0 left-0 mx-auto flex w-full items-center justify-between border-gray-200 border-b bg-white px-4 py-4 md:px-10'>
 			<div>
 				<Link href='/' className='font-bold text-2xl'>
 					Ryuta Koga
@@ -20,7 +21,7 @@ export default function Header() {
 			<nav
 				className={`-translate-x-full fixed top-0 left-0 z-50 flex h-full w-[200px] rounded-md bg-white px-6 py-8 shadow duration-200 md:static md:flex md:h-auto md:w-auto md:translate-x-0 md:flex-row md:bg-transparent md:px-0 md:py-0 md:shadow-none ${isOpen ? 'translate-x-0' : ''}`}
 			>
-				<ul className='flex flex-col items-center gap-4 md:flex-row md:gap-6'>
+				<ul className='flex flex-col items-center gap-4 md:flex-row md:gap-8'>
 					{menuItems.map((item) => (
 						<li key={item.name}>
 							<Link
