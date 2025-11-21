@@ -1,10 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { BsTwitterX } from 'react-icons/bs'
+import { CiHeart } from 'react-icons/ci'
 import { FaGithub } from 'react-icons/fa'
 import { FaArrowRight } from 'react-icons/fa6'
 import { Button } from '@/components/ui/button'
-
+import getArticle from '@/lib/api'
+import type { Article } from './types/article'
 export default async function Home() {
 	const skills = [
 		{ name: 'HTML5', iconPath: '/icon/html5.svg' },
@@ -24,7 +26,7 @@ export default async function Home() {
 	]
 
 	const skillBackendOrm = [{ name: 'Prisma', iconPath: '/icon/prisma.svg' }]
-
+	const articleData = await getArticle()
 	return (
 		<main>
 			<section className='mx-auto mt-[65px] max-w-[800px] px-4'>
@@ -157,19 +159,19 @@ export default async function Home() {
 					<section className='mt-8'>
 						<h3 className='font-bold text-2xl'>Tools</h3>
 						<div className='mt-4 grid grid-cols-2 gap-4 md:grid-cols-5'>
-							{skillTools.map((_skill) => (
+							{skillTools.map((skill) => (
 								<div
 									className='group rounded-md border border-gray-200 p-4 duration-200 hover:border-[#7383BF]'
-									key={_skill.name}
+									key={skill.name}
 								>
 									<Image
-										src={_skill.iconPath}
+										src={skill.iconPath}
 										width={30}
 										height={30}
-										alt={_skill.name}
+										alt={skill.name}
 										className='duration-200 group-hover:scale-110'
 									/>
-									<p className='mt-3 text-sm'>{_skill.name}</p>
+									<p className='mt-3 text-sm'>{skill.name}</p>
 								</div>
 							))}
 						</div>
@@ -181,7 +183,7 @@ export default async function Home() {
 				<div className='mx-auto max-w-5xl'>
 					<h2 className='font-bold text-3xl'>Works</h2>
 					<span className='text-xs'>制作物</span>
-					<div>ここに制作物を掲載する予定です</div>
+					<div>ここに制作物の一覧を追加予定です。</div>
 				</div>
 			</section>
 
@@ -189,7 +191,41 @@ export default async function Home() {
 				<div className='mx-auto max-w-5xl'>
 					<h2 className='font-bold text-3xl'>Blog</h2>
 					<span className='text-xs'>ブログ</span>
-					<div>ここにブログを掲載する予定です</div>
+					<div className='mt-6 grid grid-cols-4 gap-6'>
+						{articleData.map((article: Article) => (
+							<Link
+								href={`https://zenn.dev${article.path}`}
+								target='_blank'
+								key={article.id}
+								className='cursor-pointer rounded-md border border-gray-200 p-4 duration-200 hover:border-[#7383BF]'
+							>
+								<div className='flex h-full flex-col gap-2'>
+									<div className='flex flex-col items-center gap-4'>
+										<div className='text-2xl'>{article.emoji}</div>
+										<div className='text-sm'>{article.title}</div>
+									</div>
+									<div className='mt-auto flex justify-start gap-1'>
+										<CiHeart className='h-5 w-5' />
+										<div className='text-sm'>{article.liked_count}</div>
+									</div>
+								</div>
+							</Link>
+						))}
+					</div>
+
+					{articleData.length > 3 && (
+						<Button
+							size='lg'
+							asChild
+							variant='outline'
+							className='group cursor-pointer text-sm duration-200 hover:border-[#7383BF] hover:bg-[#7383BF] hover:text-white'
+						>
+							<Link href='/blog' className='flex items-center gap-3'>
+								もっと見る
+								<FaArrowRight className='w-3 duration-200 group-hover:translate-x-1.5' />
+							</Link>
+						</Button>
+					)}
 				</div>
 			</section>
 		</main>
