@@ -1,12 +1,16 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { BsTwitterX } from 'react-icons/bs'
-import { CiHeart } from 'react-icons/ci'
 import { FaGithub } from 'react-icons/fa'
-import { FaArrowRight } from 'react-icons/fa6'
+import { FaArrowUpRightFromSquare } from 'react-icons/fa6'
+import { SiZenn } from 'react-icons/si'
 import { Button } from '@/components/ui/button'
-import getArticle from '@/lib/api'
-import type { Article } from './types/article'
+import {
+	Item,
+	ItemContent,
+	ItemDescription,
+	ItemTitle,
+} from '@/components/ui/item'
 export default async function Home() {
 	const skills = [
 		{ name: 'HTML5', iconPath: '/icon/html5.svg' },
@@ -26,206 +30,114 @@ export default async function Home() {
 	]
 
 	const skillBackendOrm = [{ name: 'Prisma', iconPath: '/icon/prisma.svg' }]
-	const articleData = await getArticle()
+	// const articleData = await getArticle()
+
+	const linkMenu = [
+		{ label: '@gdk0918', href: 'https://x.com/gdk0918', icon: BsTwitterX },
+		{ label: 'ryuta09', href: 'https://github.com/ryuta09', icon: FaGithub },
+		{ label: 'ryuta09', href: 'https://zenn.dev/ryuta09', icon: SiZenn },
+	]
+
 	return (
-		<main>
-			<section className='mx-auto mt-[65px] max-w-[800px] px-4'>
-				<div className='py-32'>
-					<h2 className='font-bold text-5xl md:text-6xl'>
-						Web
-						<br className='block md:hidden' /> Engineer
-					</h2>
-					<p className='mt-4 font-semibold text-sm md:mt-6 md:text-base'>
-						フロントエンド開発 & Web制作コーディング
-					</p>
-					<div className='mt-4 flex items-center gap-4 md:mt-6'>
-						<Button
-							asChild
-							size='lg'
-							className='group cursor-pointer border text-sm duration-200 hover:border-[#7383BF] hover:bg-[#7383BF] hover:text-white'
-						>
-							<Link href='/works' className='flex items-center gap-3'>
-								制作物一覧
-								<FaArrowRight className='w-3 duration-200 group-hover:translate-x-1.5' />
-							</Link>
-						</Button>
-						<Button
-							size='lg'
-							asChild
-							variant='outline'
-							className='group cursor-pointer text-sm duration-200 hover:border-[#7383BF] hover:bg-[#7383BF] hover:text-white'
-						>
-							<Link href='/blog' className='flex items-center gap-3'>
-								ブログ一覧
-								<FaArrowRight className='w-3 duration-200 group-hover:translate-x-1.5' />
-							</Link>
-						</Button>
-					</div>
-				</div>
-			</section>
-
-			<section className='border-gray-200 border-t px-4 py-10 md:py-20'>
-				<div className='mx-auto flex max-w-[800px] flex-col items-center gap-6 md:flex-row md:gap-16'>
-					<Image
-						src='/profile-icon.webp'
-						width={200}
-						height={200}
-						alt=''
-						className='shrink-0 rounded-full border border-black'
-					/>
+		<main className='mt-16'>
+			<section className='mt-6'>
+				<div className='flex items-center gap-4'>
+					<figure>
+						<Image
+							src='/profile-icon.webp'
+							width={120}
+							height={120}
+							alt=''
+							className='rounded-full'
+						/>
+					</figure>
 					<div>
-						<div>
-							<h2 className='font-bold text-3xl'>About me</h2>
-							<span className='text-xs'>わたしについて</span>
-						</div>
-						<div>
-							<p className='mt-3 text-sm leading-6'>
-								こんにちは！2017年から新卒で通信販売代理店での販売を経験し、2023年にWebメディア運営会社に転職。Web制作におけるコーディング業務に従事し、スキル向上に励んでいます。Next.jsやReactを用いたフロントエンドWeb開発はもちろん、Webデザインから完成までの幅広い対応が可能です。
-							</p>
-							<div className='mt-4 flex items-center gap-4'>
-								<Button
-									size='lg'
-									asChild
-									variant='outline'
-									className='group cursor-pointer text-sm duration-200 hover:border-[#7383BF] hover:bg-[#7383BF] hover:text-white'
-								>
-									<Link href='/profile' className='flex items-center gap-3'>
-										もっと見る
-										<FaArrowRight className='w-3 duration-200 group-hover:translate-x-1.5' />
-									</Link>
-								</Button>
-								<Link
-									href='https://github.com/ryuta09?tab=repositories'
-									className='duration-200 hover:scale-125'
-								>
-									<FaGithub className='h-5 w-5' />
-								</Link>
-								<Link
-									href='https://x.com/gdk0918'
-									className='duration-200 hover:scale-125'
-								>
-									<BsTwitterX className='h-5 w-5' />
-								</Link>
-							</div>
-						</div>
+						<h1 className='font-bold text-3xl'>Ryuta Koga</h1>
+						<p className='mt-2 text-sm'>埼玉県在住のエンジニア？です。</p>
+						<Button
+							asChild
+							className='mt-4 bg-[#7383BF] text-white hover:bg-[#5e6fa3]'
+						>
+							<Link href='/profile'>詳しいプロフィールはこちら</Link>
+						</Button>
 					</div>
 				</div>
 			</section>
 
-			<section className='border-gray-200 border-t border-b px-4 py-10 md:py-20'>
-				<div className='mx-auto max-w-5xl'>
-					<h2 className='font-bold text-3xl'>Skills</h2>
-					<span className='text-xs'>スキル</span>
-					<section className='mt-8'>
-						<h3 className='font-bold text-2xl'>FrontEnd</h3>
-						<div className='mt-4 grid grid-cols-2 gap-4 md:grid-cols-5'>
+			<div className='mt-6 flex flex-col items-center gap-4 md:flex-row'>
+				{linkMenu.map((link) => (
+					<Item
+						asChild
+						key={link.href}
+						className='w-full flex-1 bg-[#7383BF] text-white hover:bg-[#5e6fa3]'
+					>
+						<Link href={link.href} target='_blank'>
+							<ItemContent>
+								<div className='flex items-center justify-between'>
+									<div className='flex items-center gap-3'>
+										<ItemTitle>
+											<link.icon className='h-6 w-6' />
+										</ItemTitle>
+										<ItemDescription className='self-end'>
+											{link.label}
+										</ItemDescription>
+									</div>
+									<FaArrowUpRightFromSquare className='h-4 w-4' />
+								</div>
+							</ItemContent>
+						</Link>
+					</Item>
+				))}
+			</div>
+
+			<section className='mt-10'>
+				<div className='flex gap-2'>
+					<h2 className='font-bold text-3xl'>Skill</h2>
+					<p className='self-end pb-1 text-sm'>スキル</p>
+				</div>
+				<div className='grid grid-cols-1 gap-4 md:grid-cols-3'>
+					<section>
+						<h3 className='font-semibold text-lg'>フロントエンド</h3>
+						<div className='mt-2 flex flex-wrap gap-3'>
 							{skills.map((skill) => (
 								<div
-									className='group rounded-md border border-gray-200 p-4 duration-200 hover:border-[#7383BF]'
+									className='flex items-center gap-1 rounded-4xl border border-[#7383BF] p-2 px-3'
 									key={skill.name}
 								>
-									<Image
-										src={skill.iconPath}
-										width={30}
-										height={30}
-										alt={skill.name}
-										className='duration-200 group-hover:scale-110'
-									/>
-									<p className='mt-3 text-sm'>{skill.name}</p>
+									<Image src={skill.iconPath} width={20} height={20} alt='' />
+									<div className='text-sm'>{skill.name}</div>
 								</div>
 							))}
 						</div>
 					</section>
-					<section className='mt-8'>
-						<h3 className='font-bold text-2xl'>Backend / ORM</h3>
-						<div className='mt-4 grid grid-cols-2 gap-4 md:grid-cols-5'>
-							{skillBackendOrm.map((_skill) => (
+					<section>
+						<h3 className='font-semibold text-lg'>バックエンド</h3>
+						<div className='mt-2 flex flex-wrap gap-3'>
+							{skillBackendOrm.map((skill) => (
 								<div
-									className='group rounded-md border border-gray-200 p-4 duration-200 hover:border-[#7383BF]'
-									key={_skill.name}
+									className='flex items-center gap-1 rounded-4xl border border-[#7383BF] p-2 px-3'
+									key={skill.name}
 								>
-									<Image
-										src={_skill.iconPath}
-										width={30}
-										height={30}
-										alt={_skill.name}
-										className='duration-200 group-hover:scale-110'
-									/>
-									<p className='mt-3 text-sm'>{_skill.name}</p>
+									<Image src={skill.iconPath} width={20} height={20} alt='' />
+									<div className='text-sm'>{skill.name}</div>
 								</div>
 							))}
 						</div>
 					</section>
-					<section className='mt-8'>
-						<h3 className='font-bold text-2xl'>Tools</h3>
-						<div className='mt-4 grid grid-cols-2 gap-4 md:grid-cols-5'>
+					<section>
+						<h3 className='font-semibold text-lg'>ツール</h3>
+						<div className='mt-2 flex flex-wrap gap-3'>
 							{skillTools.map((skill) => (
 								<div
-									className='group rounded-md border border-gray-200 p-4 duration-200 hover:border-[#7383BF]'
+									className='flex items-center gap-1 rounded-4xl border border-[#7383BF] p-2 px-3'
 									key={skill.name}
 								>
-									<Image
-										src={skill.iconPath}
-										width={30}
-										height={30}
-										alt={skill.name}
-										className='duration-200 group-hover:scale-110'
-									/>
-									<p className='mt-3 text-sm'>{skill.name}</p>
+									<Image src={skill.iconPath} width={20} height={20} alt='' />
+									<div className='text-sm'>{skill.name}</div>
 								</div>
 							))}
 						</div>
 					</section>
-				</div>
-			</section>
-
-			<section className='px-4 py-10 md:py-20'>
-				<div className='mx-auto max-w-5xl'>
-					<h2 className='font-bold text-3xl'>Works</h2>
-					<span className='text-xs'>制作物</span>
-					<div>ここに制作物の一覧を追加予定です。</div>
-				</div>
-			</section>
-
-			<section className='px-4 py-10 md:py-20'>
-				<div className='mx-auto max-w-5xl'>
-					<h2 className='font-bold text-3xl'>Blog</h2>
-					<span className='text-xs'>ブログ</span>
-					<div className='mt-6 grid grid-cols-4 gap-6'>
-						{articleData.map((article: Article) => (
-							<Link
-								href={`https://zenn.dev${article.path}`}
-								target='_blank'
-								key={article.id}
-								className='cursor-pointer rounded-md border border-gray-200 p-4 duration-200 hover:border-[#7383BF]'
-							>
-								<div className='flex h-full flex-col gap-2'>
-									<div className='flex flex-col items-center gap-4'>
-										<div className='text-2xl'>{article.emoji}</div>
-										<div className='text-sm'>{article.title}</div>
-									</div>
-									<div className='mt-auto flex justify-start gap-1'>
-										<CiHeart className='h-5 w-5' />
-										<div className='text-sm'>{article.liked_count}</div>
-									</div>
-								</div>
-							</Link>
-						))}
-					</div>
-
-					{articleData.length > 3 && (
-						<Button
-							size='lg'
-							asChild
-							variant='outline'
-							className='group cursor-pointer text-sm duration-200 hover:border-[#7383BF] hover:bg-[#7383BF] hover:text-white'
-						>
-							<Link href='/blog' className='flex items-center gap-3'>
-								もっと見る
-								<FaArrowRight className='w-3 duration-200 group-hover:translate-x-1.5' />
-							</Link>
-						</Button>
-					)}
 				</div>
 			</section>
 		</main>
