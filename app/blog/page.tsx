@@ -16,7 +16,7 @@ export default async function BlogPage() {
 						href={`https://zenn.dev${article.path}`}
 						target='_blank'
 						key={article.id}
-						className='cursor-pointer rounded-md border border-gray-200 p-4 duration-200 hover:border-[#7383BF]'
+						className='hover:-translate-y-1.5 cursor-pointer rounded-md border border-[#7383BF] p-4 duration-200'
 					>
 						<div className='flex h-full flex-col gap-2'>
 							<div className='flex flex-col items-center gap-4'>

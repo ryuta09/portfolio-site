@@ -78,7 +78,7 @@ export default async function Home() {
 										<ItemTitle>
 											<link.icon className='h-6 w-6' />
 										</ItemTitle>
-										<ItemDescription className='self-end'>
+										<ItemDescription className='self-end text-md'>
 											{link.label}
 										</ItemDescription>
 									</div>
