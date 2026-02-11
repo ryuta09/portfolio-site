@@ -1,16 +1,17 @@
 import Link from 'next/link'
-import SectionHeading from '@/components/SectionHeading'
-import { getArticle } from '@/lib/api'
-import type { Article } from '../types/article'
-export default async function BlogPage() {
-  const articleData = await getArticle()
+import type { Article } from '@/app/types/article'
+import SectionHeading from './SectionHeading'
+
+interface ArticleListProps {
+  data: Article[]
+}
+
+export default async function ArticleList({data}: ArticleListProps) {
   return (
-    <section className='mx-auto max-w-[1200px] px-4 py-20'>
-      <div className='mt-6'>
-        <SectionHeading as='h1' mainTitle='ブログ' subTitle='Blog' />
-      </div>
-      <div className='mt-6 grid grid-cols-4 gap-6'>
-        {articleData.map((article: Article) => (
+    <div className=''>
+      <SectionHeading mainTitle='ブログ' subTitle='Blog' />
+      <div className='mt-6 grid grid-col-1 md:grid-cols-3 gap-6'>
+        {data.map((article: Article) => (
           <Link
             href={`https://zenn.dev${article.path}`}
             target='_blank'
@@ -26,6 +27,6 @@ export default async function BlogPage() {
           </Link>
         ))}
       </div>
-    </section>
+    </div>
   )
 }

@@ -1,146 +1,140 @@
+import Image from 'next/image'
+import SectionHeading from '@/components/SectionHeading'
+
 export default function ProfilePage() {
-	return (
-		<div className='mx-auto max-w-[800px] px-4 py-20'>
-			<section className='mt-4 md:mt-6'>
-				<h2 className='font-bold text-3xl'>自己紹介</h2>
-				<p className='mt-2 text-sm'>
-					プロフィールページをご覧いただきありがとうございます！
-				</p>
-				<p className='text-sm'>
-					こちらのページでは、私の経歴などを紹介していきます。
-				</p>
-				<section className='mt-4 md:mt-6'>
-					<h3 className='mb-4 font-bold text-2xl md:mb-6'>経歴</h3>
-					<div className='relative'>
-						<div className='absolute top-0 left-4 h-full w-0.5 bg-[#7383BF]'></div>
+  return (
+    <div className='mx-auto max-w-[800px] px-4 py-20'>
+      <section className='mt-4 md:mt-6'>
+        <SectionHeading as='h1' mainTitle='自己紹介' subTitle='Profile' />
+        <section className='flex flex-col items-center md:flex-row gap-6 mt-5 md:mt-10'>
+          <div className='w-40 shrink-0'>
+            <Image
+              src='/profile-icon.webp'
+              width={160}
+              height={160}
+              alt='プロフィール画像'
+              className='rounded-full mx-auto border-[#2faa8a] border'
+            />
+          </div>
+          <div>
+            <h3>
+              <span className='font-bold text-2xl'>古賀龍太</span>(こが
+              りゅうた)
+            </h3>
+            <div className='flex flex-col gap-2 mt-3'>
+              <p className=''>
+                フロントエンドエンジニアとして自社サービスのメディアサイトの開発から、コーポレートサイトの保守・運用からグループ会社のECサイトのコーディングなど幅広く担当しています。
+              </p>
+              <p>デザインデータからのコーディングを担当してます。</p>
+            </div>
+          </div>
+        </section>
 
-						<div className='relative mb-6 flex items-start'>
-							<div className='z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#7383BF] bg-[#F2F3F5]'></div>
-							<div className='ml-6 flex-1'>
-								<div className='rounded-lg border border-gray-200 bg-white p-6 shadow-sm'>
-									<div className='mb-2 flex items-center gap-2'>
-										<div className='rounded-full border border-[#7383BF] bg-[#7383BF]/10 px-2 py-1 font-semibold text-[#7383BF] text-xs'>
-											2017年4月〜2023年3月
-										</div>
-									</div>
-									<h4 className='mb-3 font-bold text-gray-800 text-lg'>
-										販売員時代
-									</h4>
-									<p className='text-gray-600 text-sm leading-relaxed'>
-										大学卒業まで地元である群馬県高崎市にて過ごした後、大学卒業と同時に上京。
-										<br />
-										誰もが知っている大手通信会社の代理店の社員として在籍し、店舗の販売員として従事。
-										<br />
-										来店されるお客様への対応や、スタッフの教育、店舗運営などを担当しました。
-									</p>
-								</div>
-							</div>
-						</div>
+        <section className='mt-5 md:mt-10 bg-white py-10 md:py-20 ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] pl-[calc(50vw-50%)] pr-[calc(50vw-50%)] border-b border-[#f0efec]'>
+          <SectionHeading mainTitle='経歴' subTitle='CAREER' />
+          <dl className='mt-6 flex flex-col gap-6'>
+            <div className='flex flex-col md:flex-row gap-2 py-4 border-b border-b-[#f0efec]'>
+              <dt className='md:w-[150px] text-[#2faa8a] font-bold'>
+                2023/04~
+              </dt>
+              <dd className='md:w-[calc(100%-150px)]'>
+                <p className='text-lg font-bold'>株式会社ゼロアクセル</p>
+                <p className='text-sm mt-2'>
+                  自社サービスの開発・改修からグループ会社が運用しているECサイト(ecforce)のコーディング・改修・保守、メディアサイトの改修など幅広く対応
+                </p>
+              </dd>
+            </div>
+            <div className='flex flex-col md:flex-row gap-2 py-4 border-b border-b-[#f0efec]'>
+              <dt className='md:w-[150px] text-[#2faa8a] font-bold'>
+                2017/04~2023/03
+              </dt>
+              <dd className='md:w-[calc(100%-150px)]'>
+                <p className='text-lg font-bold'>販売員時代</p>
+                <p className='text-sm mt-2'>
+                  大学卒業まで地元である群馬県高崎市にて過ごした後、大学卒業と同時に上京。
+                  <br />
+                  誰もが知っている大手通信会社の代理店の社員として在籍し、店舗の販売員として従事。
+                  <br />
+                  来店されるお客様への対応や、スタッフの教育、店舗運営などを担当しました。
+                </p>
+              </dd>
+            </div>
+          </dl>
+        </section>
 
-						<div className='relative flex items-start'>
-							<div className='z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#585D78] font-bold text-sm text-white'></div>
-							<div className='ml-6 flex-1'>
-								<div className='rounded-lg border border-gray-200 bg-white p-6 shadow-sm'>
-									<div className='mb-2 flex items-center gap-2'>
-										<div className='rounded-full border border-[#7383BF] bg-[#7383BF]/10 px-2 py-1 font-medium text-[#7383BF] text-xs'>
-											2023年4月〜現在
-										</div>
-										<div className='rounded-full border border-orange-300 bg-orange-100 px-2 py-1 font-medium text-orange-700 text-xs'>
-											現職
-										</div>
-									</div>
-									<h4 className='mb-3 font-bold text-gray-800 text-lg'>
-										Webメディア運営会社
-									</h4>
-									<p className='text-gray-600 text-sm leading-relaxed'>
-										・自社サービスの新規機能の開発・既存機能の改修を担当。
-										<br />
-										・WordPressにて構築されたメディアサイトの改修・保守
-										<br />
-										・グループ会社が運用しているECサイト(ecforce)のコーディング・改修・保守
-										など多岐に渡る業務を担当しています。
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<div className='my-6 border md:my-10'></div>
-
-				<section>
-					<h3 className='font-bold text-2xl'>強み・担当分野</h3>
-					<div className='mt-4 grid grid-cols-2 gap-6 md:mt-6'>
-						<section className='rounded-3xl border border-[#7383BF] bg-white p-4 shadow-sm'>
-							<h4 className='font-bold text-lg'>フロントエンド開発</h4>
-							<ul className='mt-2 flex flex-col gap-2'>
-								<li className='ml-4 list-disc text-sm'>
-									Next.js・React を用いた Web アプリケーション開発
-								</li>
-								<li className='ml-4 list-disc text-sm'>
-									TypeScript による型安全な実装
-								</li>
-								<li className='ml-4 list-disc text-sm'>
-									継続的にコードの読みやすさ・保守性を意識した実装
-								</li>
-							</ul>
-						</section>
-						<section className='rounded-3xl border border-[#7383BF] bg-white p-4 shadow-sm'>
-							<h4 className='font-bold text-lg'>Webサイト制作</h4>
-							<ul className='mt-2 flex flex-col gap-2'>
-								<li className='ml-4 list-disc text-sm'>
-									HTML / CSS / JavaScript を用いたシンプルな Webサイト制作
-								</li>
-								<li className='ml-4 list-disc text-sm'>
-									セマンティックなHTML・レスポンシブ対応
-								</li>
-								<li className='ml-4 list-disc text-sm'>
-									LP・コーポレートサイトのフロント実装
-								</li>
-							</ul>
-						</section>
-						<section className='rounded-3xl border border-[#7383BF] bg-white p-4 shadow-sm'>
-							<h4 className='font-bold text-lg'>WordPress制作</h4>
-							<ul className='mt-2 flex flex-col gap-2'>
-								<li className='ml-4 list-disc text-sm'>
-									カスタム投稿・タクソノミーを使用したオリジナルテーマの作成
-								</li>
-								<li className='ml-4 list-disc text-sm'>
-									クライアントの運用方法に合わせた構造設計
-								</li>
-							</ul>
-						</section>
-						<section className='rounded-3xl border border-[#7383BF] bg-white p-4 shadow-sm'>
-							<h4 className='font-bold text-lg'>ECサイトの開発</h4>
-							<ul className='mt-2 flex flex-col gap-2'>
-								<li className='ml-4 list-disc text-sm'>
-									ecforceの仕様に則った実装・カスタマイズ
-								</li>
-								<li className='ml-4 list-disc text-sm'>
-									レイアウト調整、テンプレート改修、表示改善などの対応
-								</li>
-								<li className='ml-4 list-disc text-sm'>
-									Shopify を学習中で、テーマ構造や Liquid
-									の知識を活かした提案・実装にも取り組んでいます
-								</li>
-							</ul>
-						</section>
-					</div>
-				</section>
-				<div className='my-6 border md:my-10'></div>
-				<section>
-					<h3 className='font-bold text-2xl'>課題に寄り添えるエンジニア</h3>
-					<p className='mt-2 text-sm leading-normal'>
-						エンジニアとして大切にしていることは、ただ作るだけでなく誰かの困りごとに寄り添うことです。
-						<br />
-						実装に入る前の段階から、コミュニケーションを取り、どのような形が運用しやすいのかを考えながら整えていくことを心がけています。
-						<br />
-						今後はフロント側でのスキル向上はもちろんのこと、ユーザー視点に立った設計や、モバイルアプリの開発にも興味があるのでチャレンジ精神を持って取り組んでいきたいと考えています。
-						<br />
-						そのためにも、日々の学習や実践を通じてスキルを磨き続けることを大切にしています。
-					</p>
-				</section>
-			</section>
-		</div>
-	)
+        <section className='pt-10 md:pt-20'>
+          <SectionHeading mainTitle='できること' subTitle='SKILLS' />
+          <div className='mt-4 grid grid-cols-1 md:grid-cols-2 gap-6 md:mt-6'>
+            <section className='rounded-3xl bg-white p-6'>
+              <Image
+                src='/icon/icon-frontend.webp'
+                width={48}
+                height={48}
+                alt=''
+              />
+              <h4 className='font-bold text-lg mt-4'>フロントエンド開発</h4>
+              <ul className='mt-4 flex flex-col gap-2'>
+                <li className='ml-4 list-disc text-sm'>
+                  Next.js・React を用いた Web アプリケーション開発
+                </li>
+                <li className='ml-4 list-disc text-sm'>
+                  TypeScript による型安全な実装
+                </li>
+                <li className='ml-4 list-disc text-sm'>
+                  継続的にコードの読みやすさ・保守性を意識した実装
+                </li>
+              </ul>
+            </section>
+            <section className='rounded-3xl bg-white p-6'>
+              <Image
+                src='/icon/icon-site-create.webp'
+                width={48}
+                height={48}
+                alt=''
+              />
+              <h4 className='font-bold text-lg mt-4'>Webサイト制作</h4>
+              <ul className='mt-4 flex flex-col gap-2'>
+                <li className='ml-4 list-disc text-sm'>
+                  HTML / CSS / JavaScript を用いた静的サイトのコーディング
+                </li>
+                <li className='ml-4 list-disc text-sm'>
+                  セマンティックなHTML・レスポンシブ対応
+                </li>
+              </ul>
+            </section>
+            <section className='rounded-3xl bg-white p-6'>
+              <Image
+                src='/icon/icon-wordpress.webp'
+                width={48}
+                height={48}
+                alt=''
+              />
+              <h4 className='font-bold text-lg mt-4'>WordPress制作</h4>
+              <ul className='mt-4 flex flex-col gap-2'>
+                <li className='ml-4 list-disc text-sm'>
+                  カスタム投稿・タクソノミーを使用したオリジナルテーマの作成
+                </li>
+                <li className='ml-4 list-disc text-sm'>
+                  クライアントの運用方法に合わせた構造設計
+                </li>
+              </ul>
+            </section>
+            <section className='rounded-3xl bg-white p-6'>
+              <Image src='/icon/icon-cart.webp' width={48} height={48} alt='' />
+              <h4 className='font-bold text-lg mt-4'>ECサイトの開発</h4>
+              <ul className='mt-4 flex flex-col gap-2'>
+                <li className='ml-4 list-disc text-sm'>
+                  ecforceの仕様に則った実装・カスタマイズ
+                </li>
+                <li className='ml-4 list-disc text-sm'>
+                  Shopify
+                  を学習中で、基本的なGUIでの操作からテーマ構造やLiquidの知識を活かしたセクションの追加・カスタマイズが可能
+                </li>
+              </ul>
+            </section>
+          </div>
+        </section>
+      </section>
+    </div>
+  )
 }
