@@ -3,36 +3,38 @@ import SectionHeading from '@/components/SectionHeading'
 
 export default function ProfilePage() {
   return (
-    <div className='mx-auto max-w-[800px] px-4 py-20'>
+    <div className=''>
       <section className='mt-4 md:mt-6'>
-        <SectionHeading as='h1' mainTitle='自己紹介' subTitle='Profile' />
-        <section className='flex flex-col items-center md:flex-row gap-6 mt-5 md:mt-10'>
-          <div className='w-40 shrink-0'>
-            <Image
-              src='/profile-icon.webp'
-              width={160}
-              height={160}
-              alt='プロフィール画像'
-              className='rounded-full mx-auto border-[#2faa8a] border'
-            />
-          </div>
-          <div>
-            <h3>
-              <span className='font-bold text-2xl'>古賀龍太</span>(こが
-              りゅうた)
-            </h3>
-            <div className='flex flex-col gap-2 mt-3'>
-              <p className=''>
-                フロントエンドエンジニアとして自社サービスのメディアサイトの開発から、コーポレートサイトの保守・運用からグループ会社のECサイトのコーディングなど幅広く担当しています。
-              </p>
-              <p>デザインデータからのコーディングを担当してます。</p>
+        <div className='mt-16 bg-[#7C9070]/10 w-full py-8 md:py-16'>
+          <SectionHeading as='h1' mainTitle='自己紹介' subTitle='Profile' />
+          <section className='flex flex-col items-center md:flex-row gap-6 mt-5 md:mt-10 mx-auto max-w-[800px]'>
+            <div className='w-40 shrink-0'>
+              <Image
+                src='/profile-icon.webp'
+                width={160}
+                height={160}
+                alt='プロフィール画像'
+                className='rounded-full mx-auto border-[#2faa8a] border'
+              />
             </div>
-          </div>
-        </section>
+            <div className='px-4 md:px-0'>
+              <h3>
+                <span className='font-bold text-2xl'>古賀龍太</span>(こが
+                りゅうた)
+              </h3>
+              <div className='flex flex-col gap-2 mt-3'>
+                <p>
+                  フロントエンドエンジニアとして自社サービスのメディアサイトの開発から、コーポレートサイトの保守・運用からグループ会社のECサイトのコーディングなど幅広く担当しています。
+                </p>
+                <p>デザインデータからのコーディングを担当してます。</p>
+              </div>
+            </div>
+          </section>
+        </div>
 
-        <section className='mt-5 md:mt-10 bg-white py-10 md:py-20 ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] pl-[calc(50vw-50%)] pr-[calc(50vw-50%)] border-b border-[#f0efec]'>
+        <section className='bg-white py-10 md:py-20 ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] pl-[calc(50vw-50%)] pr-[calc(50vw-50%)] border-b border-[#f0efec]'>
           <SectionHeading mainTitle='経歴' subTitle='CAREER' />
-          <dl className='mt-6 flex flex-col gap-6'>
+          <dl className='mt-6 flex flex-col gap-6 max-w-[800px] mx-auto px-4'>
             <div className='flex flex-col md:flex-row gap-2 py-4 border-b border-b-[#f0efec]'>
               <dt className='md:w-[150px] text-[#2faa8a] font-bold'>
                 2023/04~
@@ -62,9 +64,9 @@ export default function ProfilePage() {
           </dl>
         </section>
 
-        <section className='pt-10 md:pt-20'>
-          <SectionHeading mainTitle='できること' subTitle='SKILLS' />
-          <div className='mt-4 grid grid-cols-1 md:grid-cols-2 gap-6 md:mt-6'>
+        <section className='pt-10 md:pt-20 px-4'>
+          <SectionHeading mainTitle='できること' subTitle='SERVICES' />
+          <div className='mt-4 grid grid-cols-1 md:grid-cols-2 gap-6 md:mt-6 max-w-[1200px] mx-auto'>
             <section className='rounded-3xl bg-white p-6'>
               <Image
                 src='/icon/icon-frontend.webp'
@@ -132,6 +134,56 @@ export default function ProfilePage() {
                 </li>
               </ul>
             </section>
+          </div>
+        </section>
+        <section className='py-10 md:py-20 max-w-[1200px] mx-auto px-4'>
+          <SectionHeading mainTitle='技術スタック' subTitle='SKILL SET' />
+          <div className='grid md:grid-cols-3 gap-4  md:gap-6 mt-4 md:mt-6'>
+            <div className='bg-white p-4 rounded-md'>
+              <div className='font-bold'>フロントエンド</div>
+              <ul className='flex flex-wrap gap-3 mt-2'>
+                <li className='py-1 px-3 rounded-lg font-medium text-sm text-[#7C9070] bg-[#7C9070]/8 flex gap-1'>
+                  HTML5
+                </li>
+                <li className='py-1 px-3 rounded-lg font-medium text-sm text-[#7C9070] bg-[#7C9070]/8 flex gap-1'>
+                  CSS3
+                </li>
+                <li className='py-1 px-3 rounded-lg font-medium text-sm text-[#7C9070] bg-[#7C9070]/8 flex gap-1'>
+                  JavaScript
+                </li>
+                <li className='py-1 px-3 rounded-lg font-medium text-sm text-[#7C9070] bg-[#7C9070]/8 flex gap-1'>
+                  TypeScript
+                </li>
+                <li className='py-1 px-3 rounded-lg font-medium text-sm text-[#7C9070] bg-[#7C9070]/8 flex gap-1'>
+                  React
+                </li>
+                <li className='py-1 px-3 rounded-lg font-medium text-sm text-[#7C9070] bg-[#7C9070]/8 flex gap-1'>
+                  Next.js
+                </li>
+                <li className='py-1 px-3 rounded-lg font-medium text-sm text-[#7C9070] bg-[#7C9070]/8 flex gap-1'>
+                  TailwindCSS
+                </li>
+              </ul>
+            </div>
+            <div className='bg-white p-4 rounded-md'>
+              <div className='font-bold'>バックエンド</div>
+              <ul className='flex flex-wrap gap-3 mt-2'>
+                <li className='py-1 px-3 rounded-lg font-medium text-sm text-[#7C9070] bg-[#7C9070]/8 flex gap-1'>
+                  Prisma
+                </li>
+              </ul>
+            </div>
+            <div className='bg-white p-4 rounded-md'>
+              <div className='font-bold'>ツール</div>
+              <ul className='flex flex-wrap gap-3 mt-2'>
+                <li className='py-1 px-3 rounded-lg font-medium text-sm text-[#7C9070] bg-[#7C9070]/8 flex gap-1'>
+                  GitHub
+                </li>
+                <li className='py-1 px-3 rounded-lg font-medium text-sm text-[#7C9070] bg-[#7C9070]/8 flex gap-1'>
+                  VScode
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
       </section>

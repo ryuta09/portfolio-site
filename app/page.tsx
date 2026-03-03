@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import ArticleList from '@/components/ArticleList'
+import Button from '@/components/Button'
 import WorkList from '@/components/WorkLilst'
 import { getArticleThreeData } from '@/lib/api'
 export default async function Home() {
-
   const linkMenu = [
     {
       label: '@gdk0918',
@@ -26,7 +26,7 @@ export default async function Home() {
   const articleData = await getArticleThreeData()
 
   return (
-    <main className='mt-16'>
+    <main className='mt-16  max-w-[1000px] mx-auto'>
       <section className='py-[100px]'>
         <div className=''>
           <Image
@@ -74,19 +74,7 @@ export default async function Home() {
       <section className='mt-4 md:mt-20 px-4 pb-20'>
         <ArticleList data={articleData} />
         <div className='mt-6'>
-          <Link
-            href='/blog'
-            className='group flex items-center justify-center gap-2 bg-[#2faa8a] rounded-2xl text-sm text-white max-w-[140px] mx-auto py-3 transition-all hover:bg-[#259174]'
-          >
-            もっと見る
-            <Image
-              src='/icon/icon-arrow-right.webp'
-              width={16}
-              height={16}
-              alt=''
-              className='group-hover:translate-x-2 transition-all'
-            />
-          </Link>
+          <Button link='/blog' />
         </div>
       </section>
     </main>

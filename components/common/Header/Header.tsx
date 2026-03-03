@@ -11,7 +11,7 @@ const menuItems = [
 export default function Header() {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   return (
-    <header className='fixed top-0 left-0 z-50 mx-auto flex w-full items-center justify-between border-gray-200 p-4 backdrop-blur-sm'>
+    <header className='fixed top-0 left-1/2 translate-x-[-50%] z-50 mx-auto w-[min(1000px,92%)] flex items-center justify-between border-gray-200 p-4 backdrop-blur-sm'>
       <div>
         <Link href='/' className='font-bold text-2xl'>
           Ryuta Koga

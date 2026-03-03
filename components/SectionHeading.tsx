@@ -17,7 +17,7 @@ export default function SectionHeading({
         {subTitle}
       </span>
       <HeadingTag
-        className={`font-bold ${as === 'h1' ? 'text-4xl' : 'text-3xl'}`}
+        className={`font-bold ${as === 'h1' ? 'text-2xl md:text-4xl' : 'text-xl md:text-3xl'}`}
       >
         {mainTitle}
       </HeadingTag>
