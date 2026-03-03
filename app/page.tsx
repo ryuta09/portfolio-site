@@ -43,7 +43,7 @@ export default async function Home() {
               フロントエンドエンジニア
             </p>
             <p className='mt-6 text-xs text-center'>
-              Web制作とWeb開発、どちらも手がけています
+              Web制作とWeb開発、どちらもやっています
             </p>
             <div className='flex justify-center gap-4 mt-4'>
               {linkMenu.map((link) => (

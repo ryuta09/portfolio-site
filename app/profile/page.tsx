@@ -5,7 +5,7 @@ export default function ProfilePage() {
   return (
     <div className=''>
       <section className='mt-4 md:mt-6'>
-        <div className='mt-16 bg-[#7C9070]/10 w-full py-8 md:py-16'>
+        <div className='mt-16 bg-white w-full py-8 md:py-16'>
           <SectionHeading as='h1' mainTitle='自己紹介' subTitle='Profile' />
           <section className='flex flex-col items-center md:flex-row gap-6 mt-5 md:mt-10 mx-auto max-w-[800px]'>
             <div className='w-40 shrink-0'>
@@ -150,6 +150,9 @@ export default function ProfilePage() {
                 </li>
                 <li className='py-1 px-3 rounded-lg font-medium text-sm text-[#7C9070] bg-[#7C9070]/8 flex gap-1'>
                   JavaScript
+                </li>
+                <li className='py-1 px-3 rounded-lg font-medium text-sm text-[#7C9070] bg-[#7C9070]/8 flex gap-1'>
+                  Astro
                 </li>
                 <li className='py-1 px-3 rounded-lg font-medium text-sm text-[#7C9070] bg-[#7C9070]/8 flex gap-1'>
                   TypeScript

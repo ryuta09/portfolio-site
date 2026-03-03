@@ -6,7 +6,7 @@ export default async function BlogPage() {
   const articleData = await getArticle()
   return (
     <section>
-      <div className='mt-16 bg-[#E8F5EC]  w-full py-8 md:py-16'>
+      <div className='mt-16 bg-white  w-full py-8 md:py-16'>
         <SectionHeading as='h1' mainTitle='ブログ' subTitle='Blog' />
         <p className='mt-2 md:mt-3 text-sm text-center'>
           これまでに執筆した記事をご紹介します
