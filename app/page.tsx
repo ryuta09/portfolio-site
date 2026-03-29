@@ -42,9 +42,6 @@ export default async function Home() {
             <p className='mt-3 text-sm text-center text-[#2faa8a] font-bold'>
               フロントエンドエンジニア
             </p>
-            <p className='mt-6 text-xs text-center'>
-              Web制作とWeb開発、どちらもやっています
-            </p>
             <div className='flex justify-center gap-4 mt-4'>
               {linkMenu.map((link) => (
                 <Link
