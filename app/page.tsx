@@ -9,12 +9,12 @@ export default async function Home() {
     {
       label: '@gdk0918',
       href: 'https://x.com/gdk0918',
-      path: '/icon/github.svg',
+      path: '/icon/x.svg',
     },
     {
       label: '@gdk0918',
       href: 'https://github.com/ryuta09',
-      path: '/icon/x.svg',
+      path: '/icon/github.svg',
     },
     {
       label: '@gdk0918',
