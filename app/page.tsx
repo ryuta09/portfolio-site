@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import ArticleList from '@/components/ArticleList'
 import Button from '@/components/Button'
-import WorkList from '@/components/WorkLilst'
+import WorkList from '@/components/WorkList'
 import { getArticleThreeData } from '@/lib/api'
 export default async function Home() {
   const linkMenu = [
